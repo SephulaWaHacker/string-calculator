@@ -3,8 +3,10 @@ class StringCalculator{
     this.add = (string) => {
       let split;
       console.log(`string = ${string}`);
-      let normalise = string.replace(/(\[|\]|\*|\/|\r\n|\n|\r|[]|)/gm, ",");
+      let normalise = string.replace(/(\%|\,|\[|\]|\*|\/|\r\n|\n|\r|[]|)/gm, "");
       console.log(`normalise = ${normalise}`);
+
+      if (string.includes(""))
 
       if (string.includes("-"))
         throw new Error("negatives not allowed");
@@ -14,7 +16,7 @@ class StringCalculator{
       else if(normalise.length === 1)
         return parseInt(normalise, 10);
       else
-        split = normalise.split(",");
+        split = normalise.split('');
         console.log(`split = ${split}`);
         let sum = 0;
         let arrlength = split.length;
@@ -34,5 +36,6 @@ let string = new StringCalculator;
 // res = randomArray(randy, randy);
 // sum = res.reduce((pv, cv) => pv + cv, 0);
 // arg = res.join();
-str = "//[***]\n1***2***3"
-console.log(string.add(str));
+// str = "//[***]\n1***2***3"
+// console.log(string.add(str));
+console.log(string.add("//[*][%]\n1*2%3"));
