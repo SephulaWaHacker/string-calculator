@@ -25,7 +25,7 @@ describe("String Calculator", () => {
   });
 
   it("should not allow negative numbers", function() {
-    expect(function() {
+    expect(() => {
       string.add("-1,2,3");
     }).toThrow(new Error("negatives not allowed"));
   });
